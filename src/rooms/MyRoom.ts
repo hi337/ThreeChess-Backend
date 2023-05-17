@@ -5,15 +5,14 @@ export class MyRoom extends Room<MyRoomState> {
   onCreate(options: any) {
     this.setState(new MyRoomState());
 
-    this.onMessage("type", (client, message) => {
-      //
-      // handle "type" message
-      //
+    this.onMessage("started", (client, message) => {
+      this.state.started = true;
     });
   }
 
   onJoin(client: Client, options: any) {
     console.log(client.sessionId, "joined!");
+    this.state.number_connected += 1;
   }
 
   onLeave(client: Client, consented: boolean) {
