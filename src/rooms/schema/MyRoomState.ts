@@ -54,7 +54,23 @@ export class MyRoomState extends Schema {
       new Piece(new Position(-10, -50), "black", "black_pawn_5"),
       new Piece(new Position(-30, -50), "black", "black_pawn_6"),
       new Piece(new Position(-50, -50), "black", "black_pawn_7"),
-      new Piece(new Position(-70, -50), "black", "black_pawn_8")
+      new Piece(new Position(-70, -50), "black", "black_pawn_8"),
+      new Piece(new Position(70, 70), "white", "white_rook_1"),
+      new Piece(new Position(-70, 70), "white", "white_rook_2"),
+      new Piece(new Position(70, -70), "black", "black_rook_1"),
+      new Piece(new Position(-70, -70), "black", "black_rook_2"),
+      new Piece(new Position(50, 70), "white", "white_knight_1"),
+      new Piece(new Position(-50, 70), "white", "white_knight_2"),
+      new Piece(new Position(50, -70), "black", "black_knight_1"),
+      new Piece(new Position(-50, -70), "black", "black_kngiht_2"),
+      new Piece(new Position(30, 70), "white", "white_bishop_1"),
+      new Piece(new Position(-30, 70), "white", "white_bishop_2"),
+      new Piece(new Position(30, -70), "black", "black_bishop_1"),
+      new Piece(new Position(-30, -70), "black", "black_bishop_2"),
+      new Piece(new Position(10, 70), "white", "white_king"),
+      new Piece(new Position(-10, 70), "white", "white_queen"),
+      new Piece(new Position(10, -70), "black", "black_king"),
+      new Piece(new Position(-10, -70), "black", "black_queen")
     );
   }
 }
