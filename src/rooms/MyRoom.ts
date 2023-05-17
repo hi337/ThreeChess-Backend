@@ -8,6 +8,16 @@ export class MyRoom extends Room<MyRoomState> {
     this.onMessage("started", (client, message) => {
       this.state.started = true;
     });
+    this.onMessage("move", (client, message) => {
+      let input = JSON.parse(message);
+      this.state.pieces_array[input.piece_name].pos.x = input.x;
+      this.state.pieces_array[input.piece_name].pos.z = input.z;
+    });
+    this.onMessage("turn_change", (client, message) => {
+      this.state.turn == "white"
+        ? (this.state.turn = "black")
+        : (this.state.turn = "white");
+    });
   }
 
   onJoin(client: Client, options: any) {
