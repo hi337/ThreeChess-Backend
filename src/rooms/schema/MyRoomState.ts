@@ -36,8 +36,20 @@ export class MyRoomState extends Schema {
   @type([Piece])
   pieces_array: Piece[];
 
+  @type("string")
+  turn: string;
+
+  @type("number")
+  number_connected: number;
+
+  @type("boolean")
+  started: boolean;
+
   constructor() {
     super();
+    this.number_connected = 0;
+    this.started = false;
+    this.turn = "white";
     this.pieces_array = new ArraySchema<Piece>(
       new Piece(new Position(70, 50), "white", "white_pawn_1"),
       new Piece(new Position(50, 50), "white", "white_pawn_2"),
