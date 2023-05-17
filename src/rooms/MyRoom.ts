@@ -10,13 +10,26 @@ export class MyRoom extends Room<MyRoomState> {
     });
     this.onMessage("move", (client, message) => {
       let input = JSON.parse(message);
-      this.state.pieces_array[input.piece_name].pos.x = input.x;
-      this.state.pieces_array[input.piece_name].pos.z = input.z;
+      this.state.recentMove = input.piece_name;
+      for (let i = 0; i < this.state.pieces_array.length; ++i) {
+        if (this.state.pieces_array[i].piece_name == input.piece_name) {
+          this.state.pieces_array[i].x = input.x;
+          this.state.pieces_array[i].z = input.z;
+        }
+      }
     });
     this.onMessage("turn_change", (client, message) => {
       this.state.turn == "white"
         ? (this.state.turn = "black")
         : (this.state.turn = "white");
+    });
+
+    this.onMessage("collide", (client, message) => {
+      for (let i = 0; i < this.state.pieces_array.length; i++) {
+        if (message == this.state.pieces_array[i].piece_name) {
+          delete this.state.pieces_array[i];
+        }
+      }
     });
   }
 
