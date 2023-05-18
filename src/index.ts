@@ -18,9 +18,6 @@ import { monitor } from "@colyseus/monitor";
 const app = express();
 app.use(express.json());
 app.use("/colyseus", monitor());
-app.get("/", (req, res) => {
-  res.send("It's time to kick ass and chew bubblegum!");
-});
 const server = createServer(app);
 
 const gameServer = new Server({
