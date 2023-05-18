@@ -25,7 +25,9 @@ app.get("/", (req, res) => {
 const server = createServer(app);
 
 const gameServer = new Server({
-  server: server,
+  transport: new WebSocketTransport({
+    server: server,
+  }),
 });
 
 gameServer.define("chess_room", MyRoom);
