@@ -12,7 +12,6 @@ import { Server } from "@colyseus/core";
 import { createServer } from "http";
 import { WebSocketTransport } from "@colyseus/ws-transport";
 import express from "express";
-// import app from "./app.config";
 import { MyRoom } from "./rooms/MyRoom";
 import { monitor } from "@colyseus/monitor";
 
