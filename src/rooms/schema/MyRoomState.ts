@@ -68,7 +68,7 @@ export class MyRoomState extends Schema {
       new Piece(50, 70, "white", "white_knight_1"),
       new Piece(-50, 70, "white", "white_knight_2"),
       new Piece(50, -70, "black", "black_knight_1"),
-      new Piece(-50, -70, "black", "black_kngiht_2"),
+      new Piece(-50, -70, "black", "black_knight_2"),
       new Piece(30, 70, "white", "white_bishop_1"),
       new Piece(-30, 70, "white", "white_bishop_2"),
       new Piece(30, -70, "black", "black_bishop_1"),
