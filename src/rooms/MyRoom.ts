@@ -35,7 +35,11 @@ export class MyRoom extends Room<MyRoomState> {
 
   onJoin(client: Client, options: any) {
     console.log(client.sessionId, "joined!");
-    this.state.number_connected += 1;
+    if (this.state.number_connected > 3) {
+      client.leave();
+    } else {
+      this.state.number_connected += 1;
+    }
   }
 
   onLeave(client: Client, consented: boolean) {
